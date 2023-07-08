@@ -1,0 +1,116 @@
+@import "../sass/variables";
+
+.summary {
+  width: 100%;
+  max-width: 40rem;
+
+  .summary-header {
+    &__image {
+      border-radius: 2rem 2rem 0 0;
+      width: 100%;
+    }
+  }
+
+  .summary-content {
+    @include flex-column;
+    background-color: #fff;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 10px 30px -15px $desaturated-blue;
+    gap: 1.7rem;
+    padding: 4rem;
+
+    &__title {
+      color: $dark-blue;
+      font-size: 2.5rem;
+      font-weight: $font-weight-1;
+      text-transform: capitalize;
+      text-align: center;
+    }
+
+    &__description {
+      color: $desaturated-blue;
+      font-size: 1.45rem;
+      line-height: 1.6;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    &__order {
+      @include flex-row;
+      justify-content: space-evenly;
+      background-color: $very-pale-blue;
+      border-radius: 1rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      padding: 2rem;
+
+      &-plan {
+        @include flex-column;
+        flex-basis: 14rem;
+        flex-shrink: 1;
+        gap: 0.5rem;
+
+        & span:nth-of-type(1) {
+          color: $dark-blue;
+          font-weight: $font-weight-1;
+          font-size: 1.5rem;
+        }
+        & span:nth-of-type(2) {
+          color: $desaturated-blue;
+          font-size: 1.4rem;
+        }
+      }
+
+      &-button {
+        flex-grow: 1rem;
+        color: $brigh-blue;
+        font-size: 1.3rem;
+        font-weight: $font-weight-2;
+        text-decoration: underline;
+
+        &:is(:hover) {
+          color: hsl(245, 75%, 65%);
+          text-decoration: none;
+        }
+      }
+
+      @include mediaQuery(phone){
+        &-plan {
+            flex-basis: 10rem;
+        }
+      }
+    }
+
+    &__buttons {
+      button {
+        border-radius: 1rem;
+        font-weight: $font-weight-2;
+        font-size: 1.4rem;
+        padding: 1.4rem;
+        width: 100%;
+
+        &:is(:active) {
+          transform: translateY(5px);
+        }
+      }
+
+      &-proceed {
+        background-color: $brigh-blue;
+        box-shadow: 0 10px 30px -15px $brigh-blue;
+        color: #fff;
+        margin-bottom: 1rem;
+        &:is(:hover) {
+          background-color: hsl(245, 75%, 65%);
+        }
+      }
+
+      &-cancel {
+        color: $desaturated-blue;
+        &:is(:hover) {
+          color: $dark-blue;
+        }
+      }
+    }
+  }
+}

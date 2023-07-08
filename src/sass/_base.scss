@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+html {
+  font-family: "Red Hat Display", sans-serif;;
+  font-size: 62.5%; // makes 1rem = 10px
+
+  @media only screen and (min-width: $breakpoint-desktop) {
+    font-size: 70%;
+  }
+}
+
+:root {
+    & > body {
+      background-image: url("../images/pattern-background-desktop.svg");
+
+      @include mediaQuery(phone) {
+        background-image: url("../images/pattern-background-mobile.svg");
+      }
+    }
+}
+
+body {
+  background-color: $pale-blue;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+main {
+  @include flex-column;
+  @include flex-center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+
+}
+
+
+
+#root {
+  width: 100%;
+}
