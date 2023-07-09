@@ -1,17 +1,16 @@
+@import "../sass/variables";
 
 .summary {
-  margin-top: 3rem;
   width: 100%;
-  max-width: 33rem;
-  height: auto;
+  max-width: 37.5rem;
   
   .summary-header {
     overflow: hidden;
     &__image {
       border-radius: 2rem 2rem 0 0;
-      object-fit: fill;
+      aspect-ratio: 1;
+      object-fit: cover;
       width: 100%;
-      height: auto
     }
   }
 
@@ -21,7 +20,7 @@
     border-radius: 0 0 2rem 2rem;
     box-shadow: 0 10px 30px -15px $desaturated-blue;
     gap: 1.7rem;
-    padding: 2rem;
+    padding: 4rem;
 
     &__title {
       color: $dark-blue;
@@ -35,24 +34,24 @@
       color: $desaturated-blue;
       font-size: 1.45rem;
       line-height: 1.6;
-      padding: 0 2rem;
+      padding: 0 1rem;
       text-align: center;
     }
 
     &__order {
       @include flex-row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-
+      justify-content: space-evenly;
       background-color: $very-pale-blue;
       border-radius: 1rem;
+      flex-wrap: wrap;
+      gap: 2rem;
       margin-bottom: 1rem;
       padding: 2rem;
 
       &-plan {
         @include flex-column;
-        margin-right: 3rem;
+        flex-basis: 14rem;
+        flex-shrink: 1;
         gap: 0.5rem;
 
         & span:nth-of-type(1) {
@@ -76,6 +75,12 @@
         &:is(:hover) {
           color: hsl(245, 75%, 65%);
           text-decoration: none;
+        }
+      }
+
+      @include mediaQuery(phone){
+        &-plan {
+            flex-basis: 10rem;
         }
       }
     }

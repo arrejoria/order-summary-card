@@ -3,6 +3,15 @@ import React, { Component } from "react";
 import summaryImage from "../images/illustration-hero.svg";
 import iconMusic from "../images/icon-music.svg";
 
+function screenLoading() {
+  // const [loading, setLoading] = useState(true);
+
+  // if (loading) {
+  // }
+}
+
+document.addEventListener("DOMContentLoaded", screenLoading);
+
 export default class OrderSummary extends Component {
   render() {
     return (
@@ -51,6 +60,9 @@ export default class OrderSummary extends Component {
               Cancel Order
             </button>
           </div>
+        </div>
+        <div className="scren-loading">
+
         </div>
       </div>
     );
