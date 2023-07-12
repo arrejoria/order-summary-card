@@ -1,17 +1,15 @@
-
 .summary {
-  margin-top: 3rem;
   width: 100%;
   max-width: 33rem;
   height: auto;
-  
+
   .summary-header {
     overflow: hidden;
     &__image {
       border-radius: 2rem 2rem 0 0;
       object-fit: fill;
       width: 100%;
-      height: auto
+      height: auto;
     }
   }
 
@@ -75,6 +73,8 @@
 
         &:is(:hover) {
           color: hsl(245, 75%, 65%);
+        }
+        &:is(:active) {
           text-decoration: none;
         }
       }
@@ -112,7 +112,4 @@
     }
   }
 
-  // @include mediaQuery(phone){
-  //   max-width: 90vw;
-  // }
 }

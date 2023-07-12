@@ -1,31 +1,32 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import summaryImage from "../images/illustration-hero.svg";
 import iconMusic from "../images/icon-music.svg";
 
-function screenLoading() {
-  // const [loading, setLoading] = useState(true);
+function OrderSummary() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
-  // if (loading) {
-  // }
-}
-
-document.addEventListener("DOMContentLoaded", screenLoading);
-
-export default class OrderSummary extends Component {
-  render() {
-    return (
-      <div className="summary">
-        <figure className="summary-header">
-          <img
-            src={summaryImage}
-            alt="Hero Illustration"
-            width={450}
-            height={225}
-            className="summary-header__image"
-          />
-        </figure>
-
+  return (
+    <div
+      className="summary"
+      data-aos="fade"
+      data-aos-delay="100"
+      data-aos-duration="1500"
+    >
+      <figure className="summary-header">
+        <img
+          src={summaryImage}
+          alt="Hero Illustration"
+          width={450}
+          height={225}
+          className="summary-header__image"
+        />
+      </figure>
+      <form action="/" method="">
         <div className="summary-content">
           <h1 className="summary-content__title">order summary</h1>
           <p className="summary-content__description">
@@ -52,19 +53,24 @@ export default class OrderSummary extends Component {
               Change
             </button>
           </div>
-          <div className="summary-content__buttons">
+          <div
+            className="summary-content__buttons"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+          >
             <button type="submit" className="summary-content__buttons-proceed">
               Proceed to Payment
             </button>
-            <button type="submit" className="summary-content__buttons-cancel">
+            <button type="button" className="summary-content__buttons-cancel">
               Cancel Order
             </button>
           </div>
         </div>
-        <div className="scren-loading">
-
-        </div>
-      </div>
-    );
-  }
+      </form>
+    </div>
+  );
 }
+
+export default OrderSummary;
